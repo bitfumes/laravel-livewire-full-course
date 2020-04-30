@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livewire</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    @livewireStyles
+    <livewire:styles />
 </head>
 
 <body>
-    @livewire('counter')
-    @livewireScripts
+    <livewire:comments />
+    <livewire:scripts />
 </body>
 
 </html>
