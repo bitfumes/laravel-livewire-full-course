@@ -12,6 +12,14 @@ class Comments extends Component
     use WithPagination;
 
     public $newComment;
+    public $image;
+
+    protected $listeners = ['fileUpload' => 'handleFileUpload'];
+
+    public function handleFileUpload($imageData)
+    {
+        $this->image = $imageData;
+    }
 
     public function updated($field)
     {
