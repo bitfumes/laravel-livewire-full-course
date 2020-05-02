@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Comment extends Model
 {
@@ -11,5 +12,10 @@ class Comment extends Model
     public function creator()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function getImagePathAttribute()
+    {
+        return Storage::disk('public')->url($this->image);
     }
 }
